@@ -103,22 +103,8 @@
  (setq matlab-indent-function t)
 (setq matlab-shell-command "matlab")
 
+;; line wrap
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(global-set-key (kbd "C-c q") 'auto-fill-mode)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36" "bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" "3a3de615f80a0e8706208f0a71bbcc7cc3816988f971b6d237223b6731f91605" "fe666e5ac37c2dfcf80074e88b9252c71a22b6f5d2f566df9a7aa4f9bea55ef8" "b35a14c7d94c1f411890d45edfb9dc1bd61c5becd5c326790b51df6ebf60f402" "ecba61c2239fbef776a72b65295b88e5534e458dfe3e6d7d9f9cb353448a569e" default)))
- '(package-selected-packages
-   (quote
-    (htmlize ox-reveal all-the-icons-dired monokai-theme neotree doom-themes use-package typo selectric-mode poet-theme org-bullets olivetti flyspell-correct))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
