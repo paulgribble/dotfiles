@@ -106,6 +106,4 @@
  (setq matlab-indent-function t)
 (setq matlab-shell-command "matlab")
 
-(require 'org-ref)
-
 (global-visual-line-mode 1)
