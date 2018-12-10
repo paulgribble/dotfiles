@@ -51,6 +51,9 @@
 (setq TeX-PDF-mode t)
 (setq TeX-auto-save nil)
 
+(setq font-latex-fontify-script nil)
+(setq font-latex-fontify-sectioning 'color)
+
 ;;(setq-default TeX-engine 'xetex)
 (setq-default TeX-PDF-mode t)
 ;;(set-variable (quote latex-run-command) "pdflatex")
@@ -107,18 +110,3 @@
  (setq matlab-indent-function t)
 (setq matlab-shell-command "matlab")
 
-(global-visual-line-mode 1)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (auctex-latexmk auctex use-package solarized-theme ox-reveal neotree matlab-mode htmlize doom-themes))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
