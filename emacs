@@ -19,26 +19,11 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
-;; Theme
-;(use-package doom-themes
-;  :ensure t
-;  :config
-;  (load-theme 'doom-one t))
-
 ;; Fancy titlebar for MacOS
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (setq ns-use-proxy-icon  nil)
 (setq frame-title-format nil)
-
-;; All The Icons
-(use-package all-the-icons :ensure t)
-
-;; NeoTree
-(use-package neotree
-  :ensure t
-  :init
-);;  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
 
 ;; Show matching parens
 (setq show-paren-delay 0)
@@ -53,10 +38,6 @@
 
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 'color)
-
-;;(setq-default TeX-engine 'xetex)
-(setq-default TeX-PDF-mode t)
-;;(set-variable (quote latex-run-command) "pdflatex")
 
 ;; reftex
 (require 'reftex)
@@ -91,22 +72,32 @@
 ;; KGB intermediate files after orgmode export
 (setq org-latex-logfiles-extensions (quote ("tex" "aux" "log" "out" "toc" "blg" "bbl" "auto")))
 
+;; ess
+(require 'ess-site)
+
+;; org-babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)))
+(setq org-confirm-babel-evaluate nil) ;; BE CAREFUL!
+
 ;; org-latex
 (setq org-latex-pdf-process
       '("xelatex -interaction nonstopmode %f"
 	"xelatex -interaction nonstopmode %f"))
-
 (setq org-src-fontify-natively t)
 
-;; reveal.js presentations
-(require 'ox-reveal)
-(setq Org-Reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
-(setq Org-Reveal-mathjax t)
+(global-visual-line-mode 1)
 
-(autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
- (add-to-list
-  'auto-mode-alist
-  '("\\.m$" . matlab-mode))
- (setq matlab-indent-function t)
-(setq matlab-shell-command "matlab")
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (ess htmlize auctex auctex-latexmk))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
