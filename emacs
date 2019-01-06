@@ -25,6 +25,9 @@
 (setq ns-use-proxy-icon  nil)
 (setq frame-title-format nil)
 
+;; inhibit startup screen
+(setq inhibit-splash-screen t)
+
 ;; Show matching parens
 (setq show-paren-delay 0)
 (show-paren-mode 1)
