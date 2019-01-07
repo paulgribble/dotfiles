@@ -32,6 +32,15 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+;; smooth-scrolling 
+(require 'smooth-scrolling)
+
+;; more smooth efforts.
+(setq-default 
+ scroll-conservatively 0
+ scroll-up-aggressively 0.01
+ scroll-down-aggressively 0.01)
+
 ;; AUCTeX
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -90,17 +99,20 @@
 	"xelatex -interaction nonstopmode %f"))
 (setq org-src-fontify-natively t)
 
-(global-visual-line-mode 1)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (ess htmlize auctex auctex-latexmk))))
+ '(package-selected-packages
+   (quote
+    (centered-cursor-mode ess htmlize auctex auctex-latexmk))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(global-visual-line-mode 1)
+
