@@ -27,3 +27,7 @@ export PATH="/Users/plg/anaconda3/bin:$PATH"
 
 # path for homebrew
 export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+# homebrew cleanup env variable
+export HOMEBREW_INSTALL_CLEANUP
