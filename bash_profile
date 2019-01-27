@@ -13,6 +13,9 @@ alias ll="/bin/ls -rtFlG"
 alias gemacs="open -a /Applications/Emacs.app $1"
 alias ia="open $1 -a /Applications/iA\ Writer.app"
 
+# color prompt
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+
 ## rsync with ssh and progress keep partial
 # rsync -avzhe ssh --progress --partial --inplace source dest
 
