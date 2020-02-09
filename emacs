@@ -41,6 +41,10 @@
  scroll-up-aggressively 0.01
  scroll-down-aggressively 0.01)
 
+;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;; AUCTeX
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -99,6 +103,9 @@
 	"xelatex -interaction nonstopmode %f"))
 (setq org-src-fontify-natively t)
 
+;; reveal.js
+(require 'org-re-reveal)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -106,7 +113,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (centered-cursor-mode ess htmlize auctex auctex-latexmk))))
+    (org-capture-pop-frame org-bullets helm-projectile neotree org-re-reveal-ref ox-reveal org-re-reveal matlab-mode markdown-mode centered-cursor-mode ess htmlize auctex auctex-latexmk))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -115,4 +122,32 @@
  )
 
 (global-visual-line-mode 1)
+
+(require 'doom-themes)
+
+(require 'indent-guide)
+(indent-guide-global-mode)
+(set-face-background 'indent-guide-face "dimgray")
+
+;; Global settings (defaults)
+(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each
+;; theme may have their own settings.
+(load-theme 'doom-molokai t)
+
+;; Enable flashing mode-line on errors
+(doom-themes-visual-bell-config)
+
+;; Enable custom neotree theme
+(doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
+
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+(require 'helm)
+(require 'helm-projectile)
+
+
 
